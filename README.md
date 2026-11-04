@@ -3,7 +3,34 @@
 **Student Name:** Allamraju Abhyas  
 **Registration Number:** 252U1R1009  
 **Section:** CSE-2A
-**Faculty Name:**Sai Siva Teja
+**Faculty Name:** Sai Siva Teja
+
+## 🌐 Live Deployed URL
+
+> **Base URL:** https://bdf-lab-03-rest-api-allamraju-abhyas.onrender.com/
+
+### Live API Endpoints
+
+| Method | Live URL | Purpose |
+|---|---|---|
+| GET | https://bdf-lab-03-rest-api-allamraju-abhyas.onrender.com/ | API info |
+| GET | https://bdf-lab-03-rest-api-allamraju-abhyas.onrender.com/books | List all books |
+| GET | https://bdf-lab-03-rest-api-allamraju-abhyas.onrender.com/books/1 | Get book by ID |
+| POST | https://bdf-lab-03-rest-api-allamraju-abhyas.onrender.com/books | Create a book |
+| PUT | https://bdf-lab-03-rest-api-allamraju-abhyas.onrender.com/books/1 | Update a book |
+| DELETE | https://bdf-lab-03-rest-api-allamraju-abhyas.onrender.com/books/1 | Delete a book |
+
+### Live Query Parameter Examples
+
+| Description | Live URL |
+|---|---|
+| Search by title | https://bdf-lab-03-rest-api-allamraju-abhyas.onrender.com/books?search_q=code |
+| Order by price (DESC) | https://bdf-lab-03-rest-api-allamraju-abhyas.onrender.com/books?order_by=price&order=DESC |
+| Pagination (limit & offset) | https://bdf-lab-03-rest-api-allamraju-abhyas.onrender.com/books?limit=5&offset=0 |
+| Price range filter | https://bdf-lab-03-rest-api-allamraju-abhyas.onrender.com/books?min_price=200&max_price=500 |
+| Combined filters | https://bdf-lab-03-rest-api-allamraju-abhyas.onrender.com/books?search_q=the&order_by=price&order=DESC&min_price=200&max_price=600&limit=5&offset=0 |
+
+---
 
 A complete Node.js + Express + SQLite implementation of Lab 3, continued from the Lab 2 `book` table approach.
 
@@ -67,14 +94,17 @@ Then use `http://localhost:3001`.
 | `min_price` | none | `?min_price=200` |
 | `max_price` | none | `?max_price=500` |
 
-Combined example:
+Combined example (localhost):
 `GET http://localhost:3000/books?search_q=the&order_by=price&order=DESC&min_price=200&max_price=600&limit=5&offset=0`
+
+Combined example (live):
+`GET https://bdf-lab-03-rest-api-allamraju-abhyas.onrender.com/books?search_q=the&order_by=price&order=DESC&min_price=200&max_price=600&limit=5&offset=0`
 
 Allowed `order_by`: `id`, `title`, `author`, `price`. Allowed `order`: `ASC`, `DESC`. `limit` must be 1–100; `offset` must be a non-negative integer.
 
 ## Postman testing
 
-Import `postman/Lab-03-Books-API.postman_collection.json` into Postman. Set `baseUrl` to `http://localhost:3000` if needed. Run requests in the collection. The collection includes successful and failure cases for list/search/filter, CRUD, validation, invalid sort/pagination, and missing IDs.
+Import `postman/Lab-03-Books-API.postman_collection.json` into Postman. Set `baseUrl` to `http://localhost:3000` (local) or `https://bdf-lab-03-rest-api-allamraju-abhyas.onrender.com` (live) if needed. Run requests in the collection. The collection includes successful and failure cases for list/search/filter, CRUD, validation, invalid sort/pagination, and missing IDs.
 
 ### Sample request body
 ```json
